@@ -213,28 +213,32 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    object-position: center 20%;
+    /* Focus on the upper part for mirror selfie */
     border-radius: 15px;
     cursor: pointer;
 }
 
-/* Fixed Rotation for photo_2026-02-02_23-57-59.jpg if needed */
+/* Fixed Rotation for photo_2026-02-02_23-57-59.jpg */
 .rotate-container {
     height: 200px;
     overflow: hidden;
     border-radius: 15px;
     position: relative;
-    background: #eee;
+    background: #fdf2f2;
 }
 
 .rotate-fix {
-    width: 200px !important;
-    /* Force width to height ratio */
-    height: 100% !important;
+    width: 400px !important;
+    height: 250px !important;
     object-fit: cover;
+    object-position: 80% 50%;
+    /* Focus on the face (right side of original landscape) */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg) scale(1.6);
+    /* 90deg rotation to show the face correctly */
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 /* Animations */
