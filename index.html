@@ -28,7 +28,7 @@
         <section class="section-card animate-up" style="animation-delay: 0.2s;">
             <h2 class="section-title">😊 פרטים אישיים</h2>
             <div class="details-grid">
-                <div class="detail-item"><span class="icon">🎂</span> <b>גיל:</b> 24</div>
+               <div class="detail-item"><span class="icon">🎂</span> <b>גיל:</b> <span id="age"></span></div>
                 <div class="detail-item"><span class="icon">🌱</span> <b>גובה:</b> 183</div>
                 <div class="detail-item"><span class="icon">👳</span> <b>עדה:</b> אשכנזי / פרסי</div>
                 <div class="detail-item"><span class="icon">🎗</span> <b>מצב משפחתי:</b> רווק</div>
@@ -42,7 +42,7 @@
         <section class="section-card animate-up" style="animation-delay: 0.3s;">
             <h2 class="section-title">📖 קצת עלי</h2>
             <div class="about-text">
-                <b>מה עושה כרגע בחיים:</b> מפתח תוכנה ואתרים.
+                <b>מה עושה כרגע בחיים:</b> מורה TALENT משרד החינוך
                 <b>לימודים:</b> 12 שנות לימוד, בגרות מלאה, תואר ראשון B.Sc בהנדסת תוכנה.
 
                 <b>תכונות אופי:</b>
@@ -125,7 +125,23 @@
     <footer style="text-align: center; padding: 40px; color: #888;">
         <p>שנזכה לבשורות טובות ובניין עדי עד ✨</p>
     </footer>
+<script>
+    function updateAge() {
+        const birthDate = new Date(2001, 5, 19); // 19.6.2001
+        const now = new Date();
+        const diffTime = now - birthDate;
+        const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.2425;
+        const ageDecimal = diffTime / millisecondsPerYear;
 
+        const ageElement = document.getElementById('age');
+        if (ageElement) {
+            ageElement.textContent = ageDecimal.toFixed(8);
+        }
+    }
+
+    updateAge();
+    setInterval(updateAge, 50);
+</script>
 </body>
 
 </html>
